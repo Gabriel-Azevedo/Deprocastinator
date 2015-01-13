@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Deprocastinator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -59,7 +59,7 @@
                             <outletCollection property="gestureRecognizers" destination="Ds4-Zd-l9s" appends="YES" id="SiK-c4-x16"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="0VJ-tx-Wzq">
+                    <navigationItem key="navigationItem" title="Deprocastinator" id="0VJ-tx-Wzq">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="ubW-M3-jmC">
                             <connections>
                                 <action selector="onEditButtonTapped:" destination="vXZ-lx-hvc" id="fHD-HM-6Mb"/>
@@ -75,7 +75,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="Ds4-Zd-l9s">
                     <connections>
-                        <action selector="onRightSwipeGesture:" destination="vXZ-lx-hvc" id="CJv-1l-NpD"/>
+                        <action selector="prioritySwipeGesture:" destination="vXZ-lx-hvc" id="cky-ZK-rPx"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

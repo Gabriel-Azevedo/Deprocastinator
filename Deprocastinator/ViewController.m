@@ -68,7 +68,7 @@
 
 }
 
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     NSString *stringToMove = self.array[sourceIndexPath.row];
     [self.array removeObjectAtIndex:sourceIndexPath.row];
@@ -79,7 +79,6 @@
 {
     return YES;
 }
-
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
@@ -93,8 +92,6 @@
     }
     [self.tableView reloadData];
 }
-
-
 
 - (IBAction)onAddButtonPressed:(UIButton *)sender
 {
@@ -137,6 +134,37 @@
 {
     [self.array removeObject:cell.textLabel.text];
     [self.tableView reloadData];
+}
+
+- (IBAction)prioritySwipeGesture:(UISwipeGestureRecognizer *)sender
+{
+
+    CGPoint touchPoint = [sender locationInView:self.tableView];
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+
+    if (cell.textLabel.textColor == [UIColor blackColor])
+    {
+        cell.textLabel.textColor = [UIColor greenColor];
+    }
+    else if (cell.textLabel.textColor == [UIColor greenColor])
+    {
+        (cell.textLabel.textColor = [UIColor yellowColor]);
+    }
+    else if (cell.textLabel.textColor == [UIColor yellowColor])
+
+    {
+        (cell.textLabel.textColor = [UIColor redColor]);
+    }
+    else if (cell.textLabel.textColor == [UIColor redColor])
+    {
+        (cell.textLabel.textColor = [UIColor blackColor]);
+    }
+    else
+    {
+        
+    }
+    
 }
 
 
